@@ -261,10 +261,16 @@ mpiexec.hydra -n 6 pmemd.MPI -O \
 -ref 1btl.crd
 ```
 
-run
+submit the job to queue by running
 
 ```
 sbatch minimization_solvent_sbatch
+```
+
+to check the status of the job run
+
+```
+squeue -u ikazan
 ```
 
 #### After the step is complete, copy the files to your computer
@@ -360,10 +366,16 @@ mpiexec.hydra -n 6 pmemd.MPI -O \
 
 press `esc` button on keyboard and then type `:wq`
 
-run
+submit the job to queue by running
 
 ```
 sbatch minimization_solution_sbatch
+```
+
+to check the status of the job run
+
+```
+squeue -u ikazan
 ```
 
 ## Heat up System
@@ -468,10 +480,16 @@ mpiexec.hydra -n 6 pmemd.MPI -O \
 
 press `esc` button on keyboard and then type `:wq`
 
-run
+submit the job to queue by running
 
 ```
 sbatch heatup_sbatch
+```
+
+to check the status of the job run
+
+```
+squeue -u ikazan
 ```
 
 ## Production NPT (CPU)
@@ -570,10 +588,16 @@ mpiexec.hydra -n 6 pmemd.MPI -O \
 
 press `esc` button on keyboard and then type `:wq`
 
-run
+submit the job to queue by running
 
 ```
 sbatch production_npt_cpu_sbatch
+```
+
+to check the status of the job run
+
+```
+squeue -u ikazan
 ```
 
 ## Production NPT (GPU)
@@ -680,10 +704,16 @@ pmemd.cuda -O \
 
 press `esc` button on keyboard and then type `:wq`
 
-run
+submit the job to queue by running
 
 ```
 sbatch production_npt_gpu_sbatch
+```
+
+to check the status of the job run
+
+```
+squeue -u ikazan
 ```
 
 ## Get the pdb file from the simulation
