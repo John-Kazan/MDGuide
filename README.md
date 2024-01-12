@@ -241,17 +241,15 @@ copy and paste the text below
 
 ```
 #!/usr/bin/env bash
-#SBATCH -N 1
-#SBATCH -c 6
-#SBATCH -G a100:1
+#SBATCH -n 1
 #SBATCH -p general
-#SBATCH -t 1-00:00:00
+#SBATCH -t 7-00:00:00
 #SBATCH -o slurm.%j.out
 #SBATCH -e slurm.%j.err
 
 module load amber/22v3
 
-mpiexec.hydra -n 6 pmemd.MPI -O \
+pmemd -O \
 -i minimization_solvent.in \
 -o minimization_solvent.out \
 -p 1btl.parm7 \
@@ -345,17 +343,15 @@ copy and paste the text below
 
 ```
 #!/usr/bin/env bash
-#SBATCH -N 1
-#SBATCH -c 6
-#SBATCH -G a100:1
+#SBATCH -n 1
 #SBATCH -p general
-#SBATCH -t 1-00:00:00
+#SBATCH -t 7-00:00:00
 #SBATCH -o slurm.%j.out
 #SBATCH -e slurm.%j.err
 
 module load amber/22v3
 
-mpiexec.hydra -n 6 pmemd.MPI -O \
+pmemd -O \
 -i minimization_solution.in \
 -o minimization_solution.out \
 -p 1btl.parm7 \
@@ -458,17 +454,15 @@ copy and paste the text below
 
 ```
 #!/usr/bin/env bash
-#SBATCH -N 1
-#SBATCH -c 6
-#SBATCH -G a100:1
+#SBATCH -n 1
 #SBATCH -p general
-#SBATCH -t 1-00:00:00
+#SBATCH -t 7-00:00:00
 #SBATCH -o slurm.%j.out
 #SBATCH -e slurm.%j.err
 
 module load amber/22v3
 
-mpiexec.hydra -n 6 pmemd.MPI -O \
+pmemd -O \
 -i heatup.in \
 -o heatup.out \
 -p 1btl.parm7 \
@@ -567,17 +561,15 @@ copy and paste the text below
 
 ```
 #!/usr/bin/env bash
-#SBATCH -N 1
-#SBATCH -c 6
-#SBATCH -G a100:1
+#SBATCH -n 1
 #SBATCH -p general
-#SBATCH -t 1-00:00:00
+#SBATCH -t 7-00:00:00
 #SBATCH -o slurm.%j.out
 #SBATCH -e slurm.%j.err
 
 module load amber/22v3
 
-mpiexec.hydra -n 6 pmemd.MPI -O \
+pmemd -O \
 -i production_npt_cpu.in \
 -o production_npt_cpu.out \
 -p 1btl.parm7 \
@@ -684,8 +676,8 @@ copy and paste the text below
 ```
 #!/usr/bin/env bash
 #SBATCH -N 1
-#SBATCH -c 6
-#SBATCH -G a100:1
+#SBATCH -n 6
+#SBATCH -G 1
 #SBATCH -p general
 #SBATCH -t 1-00:00:00
 #SBATCH -o slurm.%j.out
