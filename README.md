@@ -2,79 +2,11 @@
 
 ## Initial steps with PDB
 
-Download PBD ID: [1BTL]
-
-rename it as `1btl_raw.pdb`
-
-Start PyMOL and load `1btl_raw.pdb` 
-
-![Screenshot](PyMOL/PyMOL_1.png)
-
-From Display show the `Sequence`
-
-![Screenshot](PyMOL/PyMOL_2.png)
-
-Sequence is now shown
-
-![Screenshot](PyMOL/PyMOL_3.png)
-
-Click `A` button next to `all` and select `remove waters` 
-
-![Screenshot](PyMOL/PyMOL_4.png)
-
-Scroll to the right on Sequence and click on S04
-
-![Screenshot](PyMOL/PyMOL_5.png)
-
-click the `A` button next to `(sele)` and click `remove atoms`
-
-![Screenshot](PyMOL/PyMOL_7.png)
-
-Now we are going to save the new file
-
-Go to `File` and select `Export Molecule`
-
-![Screenshot](PyMOL/PyMOL_8.png)
-
-Click `Save`
-
-![Screenshot](PyMOL/PyMOL_9.png)
-
-Type name as `1btl` (without pdb extension) and then select `PDB` from the menu below and click `Save`
-
-![Screenshot](PyMOL/PyMOL_10.png)
-
-Now we created `1btl.pdb`
+Follow the PyMOL guide here: [PyMOLGuide]
 
 ## Using VPN to connect to ASU network:
 
-Run `Cisco Secure Client` VPN software
-
-type `sslvpn.asu.adu`
-
-![Screenshot](VPN/VPN_1.png)
-
-Click `Connect`
-
-when asked for username/pass use:
-
-```
-username: asuid
-pass: asupass
-second pass: push 
-```
-
-## Login to sol cluster
-
-on your terminal window:
-
-sol:
-
-```
-ssh ikazan@login.sol.rc.asu.edu
-```
-
-(change asuid to yours)
+Follow the VPN guide here: [VPNGuide]
 
 ## After logging in:
 
@@ -742,4 +674,5 @@ cpptraj -i get_pdb.in
 
 This will generate many files named `struct***.pdb`, we are going to grab the one with the largest number indicating the last frame of the simulation and rename it `last.pdb`.
 
-[1BTL]: https://files.rcsb.org/download/1BTL.pdb
+[PyMOLGuide]: https://github.com/John-Kazan/PyMOLGuide
+[VPNGuide]: https://github.com/John-Kazan/VPNGuide
