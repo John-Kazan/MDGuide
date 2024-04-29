@@ -632,36 +632,6 @@ to check the status of the job run
 squeue -u ikazan
 ```
 
-## Get the pdb file from the simulation
+# Analyze the MD simulation
 
-make sure you have `interactive` session and run:
-
-```
-module load amber/22v3
-``` 
-
-Prepare `get_pdb.in` input file:
-
-```
-vim get_pdb.in
-```
-
-press `i` to enter edit mode
-
-copy and paste the text below
-
-```
-parm 1btl.parm7
-trajin 1btl_production_npt_gpu.nc
-trajout struct pdb offset 100 multi
-```
-
-press `esc` button on keyboard and then type `:wq`
-
-run:
-
-```
-cpptraj -i get_pdb.in
-```
-
-This will generate many files named `struct***.pdb`, we are going to grab the one with the largest number indicating the last frame of the simulation and rename it `last.pdb`.
+Follow the MDEvaluationGuide guide here: [MDEvaluationGuide](https://github.com/John-Kazan/MDEvaluationGuide)
