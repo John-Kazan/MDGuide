@@ -2,13 +2,15 @@
 
 ## Initial steps with PDB
 
-Follow the PyMOL guide here: [PyMOLGuide]
+Follow the PyMOL guide here: [PyMOLGuide](https://github.com/John-Kazan/PyMOLGuide)
 
 ## Using VPN to connect to ASU network:
 
-Follow the VPN guide here: [VPNGuide]
+Follow the VPN guide here: [VPNGuide](https://github.com/John-Kazan/VPNGuide)
 
 ## After logging in:
+
+(Chane my id to yours in each command)
 
 `pwd` shows me home directory `/home/ikazan`
 
@@ -94,18 +96,6 @@ and then run:
 tleap -f tleap.in
 ```
 
-now copy the results back to your computer
-
-run the following commands on the terminal connected to your local computer
-
-```
-scp ikazan@login.sol.rc.asu.edu:/scratch/ikazan/testdir1/1btl.parm7 ./
-```
-
-```
-scp ikazan@login.sol.rc.asu.edu:/scratch/ikazan/testdir1/1btl.crd ./
-```
-
 ## Minimize Solvent
 
 Prepare `minimization_solvent.in` input file:
@@ -138,7 +128,9 @@ cut=12.0,
 
 press `esc` button on keyboard and then type `:wq`
 
-### Interactive mode
+## Two options to continue: 1) Interactive, 2) Batch (I recommend 2)
+
+### 1) Interactive mode
 
 make sure you have `interactive` session and run:
 
@@ -159,7 +151,7 @@ pmemd -O \
 -ref 1btl.crd
 ```
 
-### Batch mode
+### 2) Batch mode
 
 Prepare `minimization_solvent_sbatch` file:
 
@@ -191,6 +183,8 @@ mpiexec.hydra -n 8 pmemd.MPI -O \
 -ref 1btl.crd
 ```
 
+press `esc` button on keyboard and then type `:wq`
+
 submit the job to queue by running
 
 ```
@@ -201,16 +195,6 @@ to check the status of the job run
 
 ```
 squeue -u ikazan
-```
-
-#### After the step is complete, copy the files to your computer
-
-```
-scp ikazan@login.sol.rc.asu.edu:/scratch/ikazan/testdir1/minimization_solvent.out ./
-```
-
-```
-scp ikazan@login.sol.rc.asu.edu:/scratch/ikazan/testdir1/1btl_minimization_solvent.rst7 ./
 ```
 
 ## Minimize Solution
@@ -242,7 +226,9 @@ cut=12.0,
 
 press `esc` button on keyboard and then type `:wq`
 
-### Interactive mode
+## Two options to continue: 1) Interactive, 2) Batch (I recommend 2)
+
+### 1) Interactive mode
 
 make sure you have `interactive` session and run:
 
@@ -261,7 +247,7 @@ pmemd -O \
 -x 1btl_minimization_solution.crd
 ```
 
-### Batch mode
+### 2) Batch mode
 
 Prepare `minimization_solution_sbatch` file:
 
@@ -351,7 +337,9 @@ cut=12.0,
 
 press `esc` button on keyboard and then type `:wq`
 
-### Interactive mode
+## Two options to continue: 1) Interactive, 2) Batch (I recommend 2)
+
+### 1) Interactive mode
 
 make sure you have `interactive` session and run:
 
@@ -372,7 +360,7 @@ pmemd -O \
 -ref 1btl_minimization_solution.rst7
 ```
 
-### Batch mode
+### 2) Batch mode
 
 Prepare `heatup_sbatch` file:
 
@@ -459,7 +447,9 @@ cut=12.0,
 
 press `esc` button on keyboard and then type `:wq`
 
-### Interactive mode
+## Two options to continue: 1) Interactive, 2) Batch (I recommend 2)
+
+### 1) Interactive mode
 
 make sure you have `interactive` session and run:
 
@@ -479,7 +469,7 @@ pmemd -O \
 -x 1btl_production_npt_cpu.crd
 ```
 
-### Batch mode
+### 2) Batch mode
 
 Prepare `production_npt_cpu_sbatch`  file:
 
@@ -567,7 +557,9 @@ cut=12.0,
 
 press `esc` button on keyboard and then type `:wq`
 
-### Interactive mode
+## Two options to continue: 1) Interactive, 2) Batch (I recommend 2)
+
+### 1) Interactive mode
 
 make sure you have GPU active session
 
@@ -593,7 +585,7 @@ pmemd.cuda -O \
 -x 1btl_production_npt_gpu.nc
 ```
 
-### Batch mode
+### 2) Batch mode
 
 Prepare `production_npt_gpu_sbatch`  file:
 
@@ -673,6 +665,3 @@ cpptraj -i get_pdb.in
 ```
 
 This will generate many files named `struct***.pdb`, we are going to grab the one with the largest number indicating the last frame of the simulation and rename it `last.pdb`.
-
-[PyMOLGuide]: https://github.com/John-Kazan/PyMOLGuide
-[VPNGuide]: https://github.com/John-Kazan/VPNGuide
