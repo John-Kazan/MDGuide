@@ -8,11 +8,14 @@ Follow the PyMOL guide here: [PyMOLGuide](https://github.com/John-Kazan/PyMOLGui
 
 Follow the VPN guide here: [VPNGuide](https://github.com/John-Kazan/VPNGuide)
 
+## Before you continue
+
+- Change my id to yours in each command
+- If you are using a pdb file other than `1btl.pdb`, rename it to `1btl.pdb` so you dont have to change anything else in the scripts
+
 ## After logging in:
 
-(Chane my id to yours in each command)
-
-`pwd` shows me home directory `/home/ikazan`
+`pwd` command shows me home directory `/home/ikazan`
 
 change directory to scratch space
 
